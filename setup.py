@@ -1,7 +1,4 @@
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+from setuptools import find_packages, setup
 
 setuptools.setup(
     name='ray-gcs',
@@ -11,8 +8,8 @@ setuptools.setup(
     description='Ray KV GCS addon',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/tkaymak/gcs',
+    url='https://github.com/tkaymak/ray_gcs',
     license='MIT',
-    packages=['ray-gcs'],
+    packages=find_packages('ray_gcs'),
     install_requires=['ray', 'google-cloud-storage'],
 )
