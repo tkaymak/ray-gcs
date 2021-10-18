@@ -1,5 +1,8 @@
 from setuptools import find_packages, setup
 
+with open("README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
+
 setuptools.setup(
     name='ray-gcs',
     version='0.0.1',
