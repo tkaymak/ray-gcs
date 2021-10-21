@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='ray-gcs',
-    version='0.0.3',
+    version='0.0.4',
     author='Tobias Kaymak',
     author_email='tobias.kaymak@gmail.com',
     description='Ray KV GCS addon',
