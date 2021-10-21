@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url='https://github.com/tkaymak/ray_gcs',
     license='MIT',
-    packages=find_packages('ray_gcs'),
+    package_dir={"": "src"},
+    packages=find_packages('src'),
     install_requires=['ray', 'google-cloud-storage'],
 )
