@@ -52,7 +52,7 @@ class RayGcsKVStore(KVStoreBase):
         try:
             blob = self._bucket.blob(blob_name=self.get_storage_key(key))
             f = io.BytesIO(val)
-            blob.upload_from_file(f)
+            blob.upload_from_file(f, num_retries=5)
         except Exception as e:
             message = str(e)
             logger.error(f"Encountered ClientError while calling put() "
