@@ -72,7 +72,7 @@ class RayGcsKVStore(KVStoreBase):
             raise TypeError("key must be a string, got: {}.".format(type(key)))
 
         try:
-            blob = self._bucket.blob(blob_name=key)
+            blob = self._bucket.blob(blob_name=self.get_storage_key(key))
             return blob.download_as_bytes()
         except NotFound:
                 logger.warning(f"No such key in GCS for key = {key}")
@@ -89,7 +89,7 @@ class RayGcsKVStore(KVStoreBase):
             raise TypeError("key must be a string, got: {}.".format(type(key)))
 
         try:
-            blob = self._bucket.blob(blob_name=key)
+            blob = self._bucket.blob(blob_name=self.get_storage_key(key))
             blob.delete()
         except NotFound:
             logger.error(f"Encountered ClientError while calling delete() "
