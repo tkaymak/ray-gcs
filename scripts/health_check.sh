@@ -40,7 +40,8 @@ sleep ${check_interval_s}
 /home/ray/anaconda3/bin/serve \
   start \
   --checkpoint-path="custom://ray_gcs.RayGcsKVStore?bucket=di_ray&prefix=demo-prefix" \
-  --http-location=EveryNode
+  --http-location=EveryNode \
+  --http-host=0.0.0.0
 
 # Give it sometime for Ray Serve to startup
 sleep ${check_interval_s}
