@@ -39,7 +39,7 @@ sleep ${check_interval_s}
 # Start Serve
 /home/ray/anaconda3/bin/serve \
   start \
-  --checkpoint-path="custom://ray_gcs.RayGcsKVStore?bucket=di_ray&prefix=v2" \
+  --checkpoint-path="gs://di_ray/v2" \
   --http-location=EveryNode \
   --http-host=0.0.0.0
 
